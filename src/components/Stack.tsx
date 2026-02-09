@@ -35,10 +35,10 @@ export const Stack = () => {
 
                 <div className="text-center mb-20">
                     <span className="text-[#A67C00] font-cinzel text-sm tracking-[0.4em] mb-4 block uppercase font-bold">
-                        La Oferta Irresistible
+                        OFERTA IRRESISTIBLE
                     </span>
                     <h2 className="text-4xl md:text-5xl font-cinzel text-slate-900 leading-tight">
-                        Todo lo que incluye tu <span className="text-gold-gradient">Acceso</span>
+                        TODO LO QUE INCLUYE TU <span className="text-gold-gradient">ACCESO</span>
                     </h2>
                 </div>
 
