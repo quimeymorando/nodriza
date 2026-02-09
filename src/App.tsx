@@ -1,0 +1,103 @@
+import { useState, useEffect } from 'react'
+import { Hero } from './components/Hero'
+import { Pillars } from './components/Pillars'
+import { Story } from './components/Story'
+import { Agenda } from './components/Agenda'
+import { SpaceBackground } from './components/SpaceBackground'
+import { Preparation } from './components/Preparation'
+import { Stack } from './components/Stack'
+import { FAQ } from './components/FAQ'
+import { AssistantSection } from './components/AssistantSection'
+import { ChatWidget } from './components/ChatWidget'
+
+function App() {
+  const [view, setView] = useState<'landing' | 'booking' | 'preparation'>('landing')
+  const [isChatOpen, setIsChatOpen] = useState(false)
+
+  useEffect(() => {
+    // Detectar si la URL indica éxito (redirección desde GHL o máscara desde el Hub)
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('view') === 'confirmation' || window.location.pathname.includes('nodriza-preparacion')) {
+      setView('preparation')
+    }
+  }, [])
+
+  const toggleView = () => {
+    setView(view === 'landing' ? 'booking' : 'landing')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Renderizador de Vistas
+  const renderView = () => {
+    if (view === 'preparation') return <Preparation />
+
+    if (view === 'booking') return (
+      <div className="animate-in slide-in-from-right duration-500 min-h-screen relative overflow-y-auto">
+        <SpaceBackground />
+        <div className="container mx-auto px-4 max-w-4xl text-center text-white relative z-10 pt-24 pb-20">
+          <button
+            onClick={toggleView}
+            className="mb-12 text-white/60 hover:text-white flex items-center gap-2 mx-auto font-cinzel tracking-widest uppercase text-sm transition-colors"
+          >
+            ← Volver
+          </button>
+          <h2 className="text-3xl md:text-5xl font-cinzel mb-4 italic">Paso Final</h2>
+          <h3 className="text-xl md:text-3xl font-cinzel mb-12">Reserva tu <span className="text-gold-gradient">Llamada de Claridad</span></h3>
+
+          {/* Scroll Fix: Aumentando altura mínima y permitiendo scroll */}
+          <div className="bg-white/5 backdrop-blur-md p-2 md:p-6 rounded-sm border border-white/10 min-h-[900px] shadow-2xl">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/booking/qM3gQRT48qaIvdmE1yPj"
+              className="w-full border-none min-h-[850px]"
+              scrolling="yes"
+            />
+          </div>
+        </div>
+      </div>
+    )
+
+    // Default: Landing
+    return (
+      <div className="animate-in fade-in duration-700 relative z-10">
+        <Hero onApply={toggleView} />
+        <Pillars />
+        <Story />
+        <Stack />
+        <Agenda />
+        <FAQ />
+        <AssistantSection onOpenChat={() => setIsChatOpen(true)} />
+
+        {/* Footer CTA con Alma Galáctica */}
+        <section className="py-40 text-center relative overflow-hidden">
+          <SpaceBackground />
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            <h2 className="text-4xl md:text-6xl font-cinzel mb-12 text-white leading-tight">¿Listo para la <span className="text-gold-gradient">transformación</span>?</h2>
+            <button
+              onClick={toggleView}
+              className="button-gold-metallic px-12 py-6 text-white font-bold rounded-full font-cinzel text-xl tracking-[0.2em] shadow-gold hover:scale-105 transition-all duration-300"
+            >
+              SÍ, QUIERO APLICAR AHORA
+            </button>
+          </div>
+        </section>
+      </div>
+    )
+  }
+
+  return (
+    <main className="w-full min-h-screen bg-primary-navy relative">
+      {renderView()}
+      <ChatWidget
+        isOpen={isChatOpen}
+        setIsOpen={setIsChatOpen}
+        onBooking={() => {
+          setIsChatOpen(false)
+          setView('booking')
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        }}
+      />
+    </main>
+  )
+}
+
+export default App

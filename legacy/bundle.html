@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodriza - Joaquin Alterman | Vive de tu Propósito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 
+           NODRIZA - VERSIÓN 3.2 (CÓDIGO INTEGRAL - PLUG & PLAY)
+           CARACTERÍSTICAS:
+           - Parche de Scroll para HighLevel
+           - Celeste Hermoso (Navy Satin) en Hero y Oferta
+           - Brillo Metálico Premium en Botones
+           - Estrellas Animadas en ambos sectores
+        */
+
+        /* 1. PARCHE DE SCROLL (GHL COMPATIBLE) */
+        html,
+        body,
+        .hl_wrapper,
+        #app,
+        #preview-container,
+        .hl_page-preview--content {
+            height: auto !important;
+            overflow: visible !important;
+            position: relative !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BREAKOUT CSS */
+        .breakout {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-navy: #001A33;
+            --primary-gold: #A67C00;
+            --primary-gold-light: #C49B26;
+            --bg-light: #FFFFFF;
+            --bg-beige: #F9F5F0;
+            --text-dark: #1A1A1A;
+            --white: #FFFFFF;
+
+            /* El Celeste Hermoso */
+            --celeste-hermoso: radial-gradient(circle at 20% 30%, rgba(0, 58, 107, 0.9) 0%, rgba(0, 45, 82, 1) 100%),
+                radial-gradient(circle at 80% 70%, rgba(0, 75, 138, 0.6) 0%, transparent 50%);
+
+            --gold-metallic: linear-gradient(135deg, #A67C00 0%, #C49B26 45%, #FFD700 50%, #C49B26 55%, #A67C00 100%);
+            --beige-satin: radial-gradient(circle at 50% 0%, rgba(242, 209, 161, 0.6) 0%, rgba(252, 249, 245, 1) 100%);
+
+            --font-display: 'Cinzel', serif;
+            --font-main: 'Trebuchet MS', Arial, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .nodriza-wrapper * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        section {
+            padding: 14rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-navy);
+            margin-bottom: 2.5rem;
+        }
+
+        .highlight {
+            color: var(--primary-gold);
+        }
+
+        .text-white {
+            color: var(--white) !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .bg-dark {
+            background: var(--celeste-hermoso);
+            color: var(--white);
+        }
+
+        .bg-beige {
+            background: var(--beige-satin);
+        }
+
+        /* Botones Premium con Animación */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2.8rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-family: var(--font-display);
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 0.9rem;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gold-metallic);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(166, 124, 0, 0.2);
+            border: 0.8px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(166, 124, 0, 0.5);
+            background: linear-gradient(135deg, #C49B26 0%, #FFD700 45%, #FFFFFF 50%, #FFD700 55%, #C49B26 100%);
+        }
+
+        .btn-secondary {
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        .header .logo img {
+            filter: brightness(0) invert(1) !important;
+            height: 100px !important;
+            width: auto;
+        }
+
+        .header-scrolled {
+            background: rgba(0, 20, 40, 0.98) !important;
+            backdrop-filter: blur(15px);
+            padding: 0.8rem 0 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero & Stars */
+        .hero {
+            padding: 20rem 0 16rem;
+            background: var(--celeste-hermoso);
+            text-align: center;
+        }
+
+        .stars-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .vsl-container {
+            max-width: 950px;
+            margin: 4rem auto;
+            background: #000;
+            border: 1px solid var(--primary-gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            aspect-ratio: 16/9;
+        }
+
+        /* Elements */
+        .card {
+            background: white;
+            padding: 3.5rem 2.5rem;
+            border: 1px solid rgba(166, 124, 0, 0.15);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(166, 124, 0, 0.1);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            display: block;
+            font-style: normal;
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem;
+            background: white;
+            border-bottom: 1px solid rgba(166, 124, 0, 0.1);
+            color: var(--text-dark);
+        }
+
+        .item-value {
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+        }
+
+        /* Views */
+        .view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .view.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active-reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .booking-wrapper {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            min-height: 800px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 8rem 0;
+            }
+
+            .stack-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .header .logo img {
+                height: 70px !important;
+            }
+
+            /* Widget Optimization for Mobile */
+            #booking-view .container {
+                padding-left: 0.2rem;
+                padding-right: 0.2rem;
+            }
+
+            .booking-wrapper {
+                padding: 0;
+                border: none;
+            }
+
+            /* --- FIXES FOR MOBILE --- */
+
+            /* 1. Hero Spacing Fix */
+            .hero {
+                padding-top: 8rem !important;
+                /* Reduced from default */
+                padding-bottom: 6rem !important;
+            }
+
+            /* 2. Top Label Fix ONLY (The tag above title) */
+            .hero .container>span {
+                display: inline-block;
+                white-space: normal;
+                line-height: 1.4;
+                border: none !important;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(5px);
+                margin-bottom: 2rem;
+            }
+
+            /* Ensure highlights inside H1/H2 do NOT get the background */
+            .hero h1 span.highlight,
+            .hero h2 span.highlight,
+            span.highlight {
+                background: transparent !important;
+                backdrop-filter: none !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            /* 3. Typography Fixes */
+            h1 {
+                font-size: 2.2rem !important;
+                /* Slightly smaller for better fit */
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+                /* Enforce smaller H2 */
+            }
+
+            .highlight {
+                display: inline-block;
+                /* Avoid weird breaking */
+            }
+
+            /* 3. Image Section Fix */
+            .breakout .container {
+                grid-template-columns: 1fr !important;
+                /* Stack vertically */
+                gap: 3rem !important;
+                padding: 0 1.5rem !important;
+                /* Ensure padding so text isn't eaten */
+            }
+
+            /* Hide huge image on mobile, show smaller version or simple div */
+            .image-container-mobile-fix {
+                height: 300px !important;
+                /* Much smaller height */
+                width: 100%;
+                background-position: top center !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nodriza-wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <nav class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">
+                    <img src="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/69660bb4ccf2c60251f0a406.png"
+                        alt="NODRIZA">
+                </div>
+                <div id="header-cta">
+                    <a href="javascript:void(0)" onclick="showBookingView()" class="btn btn-secondary">Aplicar Ahora</a>
+                </div>
+                <div id="header-back" style="display: none;">
+                    <a href="javascript:void(0)" onclick="showLandingView()"
+                        style="color: white; text-decoration: none; font-weight: bold; font-family: var(--font-display);">←
+                        VOLVER</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- SECCIÓN LANDING -->
+            <div id="landing-view" class="view active">
+
+                <!-- HERO (EL CELESTE HERMOSO) -->
+                <section class="hero breakout">
+                    <canvas id="hero-stars" class="stars-canvas"></canvas>
+                    <div class="container reveal">
+                        <span
+                            style="border: 1px solid white; padding: 0.5rem 1.2rem; color: white; font-size: 0.75rem; letter-spacing: 3px;">ESCUELA
+                            DE PROPÓSITO, ESPIRITUALIDAD Y ABUNDANCIA</span>
+                        <h1 class="text-white" style="font-size: clamp(2.5rem, 6vw, 4rem); margin-top: 2rem;">Estabiliza
+                            tu <span class="highlight">SER</span>, Ordena tu <span class="highlight">SERVICIO</span> y
+                            Construye tu <span class="highlight">SOSTÉN</span></h1>
+                        <p class="text-white" style="opacity: 0.9; max-width: 800px; margin: 0 auto;">NODRIZA 2026: Una
+                            escuela viva para vivir de forma coherente, abundante y en paz con tu camino.</p>
+
+                        <div class="vsl-container">
+                            <video style="width: 100%; height: 100%;" controls
+                                poster="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/68ed61f8a6b7f95608b509a0.jpeg">
+                                <source
+                                    src="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/68ed5e379c7177928bcf347e.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <a href="javascript:void(0)" onclick="showBookingView()" class="btn btn-primary"
+                            style="padding: 1.8rem 4rem; font-size: 1.1rem;">RESERVAR MI LLAMADA DE CLARIDAD</a>
+                    </div>
+                </section>
+
+                <!-- PILARES DEL MÉTODO (SER - SERVICIO - SOSTÉN) -->
+                <section class="bg-beige breakout">
+                    <div class="container text-center">
+                        <h2 class="reveal">Los 3 Pilares de <span class="highlight">NODRIZA</span></h2>
+                        <p class="reveal" style="max-width: 700px; margin: 0 auto 4rem; color: #555;">No es solo ganar
+                            dinero. Es estabilizar tu vida en tres niveles fundamentales.</p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <!-- Pilar SER -->
+                            <div class="card reveal">
+                                <span class="icon" style="font-size: 3rem;">✦</span>
+                                <h3 style="color: var(--primary-navy);">SER</h3>
+                                <p style="font-weight: bold; margin-bottom: 1rem; color: var(--primary-gold);">
+                                    Estabilidad Interna</p>
+                                <ul
+                                    style="text-align: left; list-style: none; padding: 0; font-size: 0.95rem; color: #555;">
+                                    <li style="margin-bottom: 0.5rem;">• Regulación emocional y Amor propio</li>
+                                    <li style="margin-bottom: 0.5rem;">• Auto-Confianza y Presencia</li>
+                                    <li>• Pertenencia y Tribu</li>
+                                </ul>
+                            </div>
+
+                            <!-- Pilar SERVICIO -->
+                            <div class="card reveal">
+                                <span class="icon" style="font-size: 3rem;">☀</span>
+                                <h3 style="color: var(--primary-navy);">SERVICIO</h3>
+                                <p style="font-weight: bold; margin-bottom: 1rem; color: var(--primary-gold);">Claridad
+                                    de Propósito</p>
+                                <ul
+                                    style="text-align: left; list-style: none; padding: 0; font-size: 0.95rem; color: #555;">
+                                    <li style="margin-bottom: 0.5rem;">• Diseño de ofertas y Marca Personal</li>
+                                    <li style="margin-bottom: 0.5rem;">• Comunicación de alto impacto</li>
+                                    <li>• Expansión de tu mensaje al mundo</li>
+                                </ul>
+                            </div>
+
+                            <!-- Pilar SOSTÉN -->
+                            <div class="card reveal">
+                                <span class="icon" style="font-size: 3rem;">🏛</span>
+                                <h3 style="color: var(--primary-navy);">SOSTÉN</h3>
+                                <p style="font-weight: bold; margin-bottom: 1rem; color: var(--primary-gold);">Bases
+                                    Reales</p>
+                                <ul
+                                    style="text-align: left; list-style: none; padding: 0; font-size: 0.95rem; color: #555;">
+                                    <li style="margin-bottom: 0.5rem;">• Relación sana con el dinero</li>
+                                    <li style="margin-bottom: 0.5rem;">• Ventas y Acción Comercial</li>
+                                    <li>• Tecnología, IA y Funnels simples</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BENEFICIOS (QUE TE DARA NODRIZA) -->
+                <section class="breakout" style="background: linear-gradient(to bottom, #fff, #f9f9f9);">
+                    <div class="container">
+                        <div class="text-center reveal">
+                            <span
+                                style="color: var(--primary-gold); font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Resultados
+                                Tangibles</span>
+                            <h2 style="margin-top: 1rem; margin-bottom: 4rem;">Lo que te dará <span
+                                    class="highlight">NODRIZA</span></h2>
+                        </div>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); column-gap: 4rem; row-gap: 2rem;">
+                            <!-- Col 1 -->
+                            <ul style="list-style: none; padding: 0;" class="reveal">
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Definición de Propósito:</strong> Claridad total sobre para qué estás
+                                        aquí.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Nicho y Cliente Ideal:</strong> Reconoce a las almas que has venido a
+                                        activar.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Nave de Alto Valor:</strong> Estructura tu oferta grupal o 1 a 1.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Comunidad Viva:</strong> Desarrolla y lidera tu propia tribu.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Web Sprint:</strong> Desarrolla tu web y funnels (por ti mismo o con
+                                        nosotros).</div>
+                                </li>
+                            </ul>
+
+                            <!-- Col 2 -->
+                            <ul style="list-style: none; padding: 0;" class="reveal">
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Tecnología Simple:</strong> Amígate con IA, ChatGPT, ManyChat y
+                                        automatizaciones.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Marketing Consciente:</strong> Estrategias para convertir desde el Ser.
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Publicidad (Ads):</strong> Aprende a hacer campañas en Meta de forma
+                                        simple.</div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Diseño Humano:</strong> Astrología y herramientas para conocerte mejor.
+                                    </div>
+                                </li>
+                                <li style="margin-bottom: 1.5rem; display: flex; align-items: flex-start;">
+                                    <span
+                                        style="color: var(--primary-gold); margin-right: 1rem; font-size: 1.2rem;">✓</span>
+                                    <div><strong>Mentalidad Imparable:</strong> Abundancia, autoconfianza y equilibrio.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ESTRUCTURA SEMANAL (AGENDA) -->
+                <section class="bg-dark breakout" style="background: var(--primary-navy); color: white;">
+                    <div class="container">
+                        <div class="text-center reveal">
+                            <span
+                                style="border: 1px solid var(--primary-gold); padding: 0.5rem 1.2rem; color: var(--primary-gold); font-size: 0.75rem; letter-spacing: 3px;">AGENDA
+                                SEMANAL</span>
+                            <h2 class="text-white" style="margin-top: 2rem;">Tu Semana en <span
+                                    class="highlight">NODRIZA</span></h2>
+                            <p class="text-white" style="opacity: 0.8; margin-bottom: 4rem;">Una estructura viva
+                                diseñada para mantener tu vibración alta y tu negocio en movimiento.</p>
+                        </div>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                            <!-- Lunes -->
+                            <div class="card reveal"
+                                style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2rem; text-align: left;">
+                                <h3
+                                    style="color: white; font-size: 1.1rem; border-bottom: 1px solid var(--primary-gold); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                    LUNES</h3>
+                                <p style="color: var(--primary-gold); font-weight: bold; font-size: 0.9rem;">CUERPO +
+                                    ESPÍRITU</p>
+                                <ul
+                                    style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.9rem; color: #ddd;">
+                                    <li style="margin-bottom: 0.5rem;">• <strong>HumanFlow:</strong> Enraizar energía y
+                                        mover tensión.</li>
+                                    <li>• <strong>Sesión Troncal:</strong> Dirección interna y foco espiritual.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Martes -->
+                            <div class="card reveal"
+                                style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2rem; text-align: left;">
+                                <h3
+                                    style="color: white; font-size: 1.1rem; border-bottom: 1px solid var(--primary-gold); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                    MARTES</h3>
+                                <p style="color: var(--primary-gold); font-weight: bold; font-size: 0.9rem;">MENTE &
+                                    VENTAS</p>
+                                <ul
+                                    style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.9rem; color: #ddd;">
+                                    <li style="margin-bottom: 0.5rem;">• <strong>Abundancia:</strong> Unir
+                                        espiritualidad y acción comercial.</li>
+                                    <li>• <strong>Visión a Acción:</strong> Reprogramación y nuevos hábitos.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Miércoles -->
+                            <div class="card reveal"
+                                style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2rem; text-align: left;">
+                                <h3
+                                    style="color: white; font-size: 1.1rem; border-bottom: 1px solid var(--primary-gold); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                    MIÉRCOLES</h3>
+                                <p style="color: var(--primary-gold); font-weight: bold; font-size: 0.9rem;">REDES
+                                    SOCIALES</p>
+                                <ul
+                                    style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.9rem; color: #ddd;">
+                                    <li style="margin-bottom: 0.5rem;">• Estrategia de Contenido.</li>
+                                    <li>• Guionado, grabado y expansión del mensaje.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Jueves -->
+                            <div class="card reveal"
+                                style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2rem; text-align: left;">
+                                <h3
+                                    style="color: white; font-size: 1.1rem; border-bottom: 1px solid var(--primary-gold); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                    JUEVES</h3>
+                                <p style="color: var(--primary-gold); font-weight: bold; font-size: 0.9rem;">MARCA
+                                    PERSONAL</p>
+                                <ul
+                                    style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.9rem; color: #ddd;">
+                                    <li style="margin-bottom: 0.5rem;">• Bio, historia y coherencia estética.</li>
+                                    <li>• Construir presencia auténtica.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Viernes -->
+                            <div class="card reveal"
+                                style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); padding: 2rem; text-align: left;">
+                                <h3
+                                    style="color: white; font-size: 1.1rem; border-bottom: 1px solid var(--primary-gold); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                    VIERNES</h3>
+                                <p style="color: var(--primary-gold); font-weight: bold; font-size: 0.9rem;">TECH &
+                                    IMPLEMENTACIÓN</p>
+                                <ul
+                                    style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.9rem; color: #ddd;">
+                                    <li>• IA, Funnels, Web Sprint y Automatizaciones.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HISTORIA -->
+                <section class="breakout">
+                    <div class="container"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); align-items: center; gap: 5rem;">
+                        <div class="reveal">
+                            <div class="image-container-mobile-fix"
+                                style="width: 100%; height: 650px; background: url('https://caqodbqrdirvavlyldyp.supabase.co/storage/v1/object/public/recursos%20joaco/joaquin_alterman_style_vibe_1768237564971.png') center/cover; border: 1px solid var(--primary-gold);">
+                            </div>
+                        </div>
+                        <div class="reveal">
+                            <img src="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/69660bb495f9f9cee401f126.png"
+                                style="height: 100px; margin-bottom: 2rem;">
+                            <h2>De la Búsqueda a la <span class="highlight">Ingeniería Holística</span></h2>
+                            <p style="font-size: 1.2rem; color: #555;">Hace años, me encontraba donde quizás tú estás
+                                hoy: Con un deseo inmenso de ayudar, pero sin las herramientas para hacer de mi
+                                propósito un vehículo de libertad.</p>
+                            <p style="color: #555;"><strong>NODRIZA</strong> nace de esa integración. No es solo un
+                                curso, es una <strong>Escuela Viva</strong> donde unimos la estabilidad del SER con la
+                                estrategia del SOSTÉN. Es el método que me permitió facturar miles de dólares impactando
+                                vidas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LLAMADA DE CLARIDAD (CTA FINAL) -->
+                <section class="bg-dark breakout">
+                    <canvas id="offer-stars" class="stars-canvas"></canvas>
+                    <div class="container text-center reveal">
+                        <span
+                            style="border: 1px solid white; padding: 0.5rem 1.2rem; color: white; font-size: 0.75rem; letter-spacing: 3px;">APLICACIÓN
+                            EXCLUSIVA</span>
+                        <h2 class="text-white" style="margin-top: 2rem;">¿NODRIZA es para ti? <span
+                                class="highlight">Hablemos.</span></h2>
+
+                        <div style="max-width: 800px; margin: 3rem auto; color: white;">
+                            <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.9;">
+                                No queremos que entres si no es tu momento. Esta no es una compra impulsiva, es una
+                                decisión de vida.
+                            </p>
+                            <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 3rem; opacity: 0.9;">
+                                Reserva una <strong>Llamada de Claridad</strong> con nuestro equipo. Analizaremos tu
+                                situación actual, tus bloqueos y veremos si nuestra Escuela Viva es el vehículo que
+                                necesitas para estabilizar tu SER, ordenar tu SERVICIO y construir tu SOSTÉN.
+                            </p>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <!-- Botón Principal -->
+                            <button onclick="showBookingView()" class="btn btn-primary"
+                                style="padding: 1.8rem 5rem; font-size: 1.2rem;">SÍ, QUIERO APLICAR AHORA</button>
+
+                            <p
+                                style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.6; color: white; letter-spacing: 1px;">
+                                SIN COMPROMISO DE COMPRA. CLARIDAD RADICAL.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECCIÓN AGENDAMIENTO -->
+            <div id="booking-view" class="view">
+                <section class="container" style="padding-top: 12rem;">
+                    <div class="text-center">
+                        <span
+                            style="border: 1px solid var(--primary-navy); padding: 0.5rem 1.2rem; font-size: 0.75rem; letter-spacing: 3px;">PASO
+                            FINAL</span>
+                        <h2 style="margin-top: 2rem;">Reserva tu <span class="highlight">Llamada de Claridad</span></h2>
+                        <p style="color: #555; margin-bottom: 5rem;">Selecciona el horario que mejor te funcione.</p>
+                    </div>
+                    <div class="booking-wrapper">
+                        <iframe src="https://api.leadconnectorhq.com/widget/booking/qM3gQRT48qaIvdmE1yPj"
+                            style="width: 100%; border:none; min-height: 800px;" scrolling="no"></iframe>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="breakout text-center"
+            style="padding: 6rem 0; border-top: 1px solid rgba(0,0,0,0.05); color: #888;">
+            <p>&copy; 2026 Joaquin Alterman. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showBookingView() {
+            document.getElementById('landing-view').classList.remove('active');
+            document.getElementById('booking-view').classList.add('active');
+            document.getElementById('header-cta').style.display = 'none';
+            document.getElementById('header-back').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showLandingView() {
+            document.getElementById('booking-view').classList.remove('active');
+            document.getElementById('landing-view').classList.add('active');
+            document.getElementById('header-back').style.display = 'none';
+            document.getElementById('header-cta').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function initNodriza() {
+            console.log('Nodriza v3.2 Cargada');
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('header-scrolled');
+                else header.classList.remove('header-scrolled');
+            });
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active-reveal');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            function startStars(canvasId) {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+                const ctx = canvas.getContext('2d');
+                const resize = () => {
+                    canvas.width = canvas.parentElement.offsetWidth;
+                    canvas.height = canvas.parentElement.offsetHeight;
+                };
+                window.addEventListener('resize', resize);
+                resize();
+                const stars = Array.from({ length: 80 }, () => ({
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    size: Math.random() * 2, opacity: Math.random(),
+                    speed: 0.005 + Math.random() * 0.015, direction: Math.random() > 0.5 ? 1 : -1
+                }));
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    stars.forEach(s => {
+                        ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
+                        ctx.beginPath(); ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2); ctx.fill();
+                        s.opacity += s.speed * s.direction;
+                        if (s.opacity > 0.9 || s.opacity < 0.2) s.direction *= -1;
+                    });
+                    requestAnimationFrame(animate);
+                }
+                animate();
+            }
+            startStars('hero-stars');
+            startStars('offer-stars');
+        }
+
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNodriza);
+        else initNodriza();
+    </script>
+</body>
+
+</html>

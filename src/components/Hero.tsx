@@ -1,0 +1,68 @@
+import { motion } from 'framer-motion'
+import { SpaceBackground } from './SpaceBackground'
+
+interface HeroProps {
+    onApply: () => void;
+}
+
+export const Hero = ({ onApply }: HeroProps) => {
+    return (
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
+            {/* Fondo Galáctico Unificado */}
+            <SpaceBackground />
+
+            <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+                <motion.span
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="inline-block border border-white/40 px-6 py-2 text-white text-xs tracking-[0.3em] mb-8 uppercase"
+                >
+                    Escuela de Propósito, Espiritualidad y Abundancia
+                </motion.span>
+
+                <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    className="text-4xl md:text-6xl lg:text-7xl font-cinzel text-white mb-8 leading-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]"
+                >
+                    Estabiliza tu <span className="text-gold-gradient drop-shadow-sm px-2">SER</span>, <br className="hidden md:block" />
+                    Ordena tu <span className="text-gold-gradient drop-shadow-sm px-2">SERVICIO</span> y <br className="hidden md:block" />
+                    Construye tu <span className="text-gold-gradient drop-shadow-sm px-2">SOSTÉN</span>
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-lg md:text-xl font-montserrat text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed border-l-2 border-[#A67C00] pl-8"
+                >
+                    NODRIZA 2026: Una escuela viva para vivir de forma coherente, abundante y en paz con tu camino.
+                </motion.p>
+
+                {/* VSL Container (WebApp Style) */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="w-full max-w-4xl mx-auto aspect-video bg-black/80 rounded-sm border border-white/20 shadow-2xl overflow-hidden mb-12 group transition-all duration-700 hover:border-[#A67C00]/50"
+                >
+                    <iframe
+                        className="w-full h-full"
+                        src="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/68ed5e379c7177928bcf347e.mp4"
+                        title="Nodriza VSL"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </motion.div>
+
+                <button
+                    onClick={onApply}
+                    className="button-gold-metallic px-8 py-4 md:px-10 md:py-5 text-white font-bold rounded-full shadow-gold hover:scale-105 transition-all duration-300 font-cinzel text-lg md:text-xl tracking-widest"
+                >
+                    RESERVAR MI LLAMADA DE CLARIDAD
+                </button>
+            </div>
+        </section>
+    )
+}

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-navy: #001A33;
+  --primary-gold: #A67C00;
+  --primary-gold-light: #FFD700;
+  --celeste-hermoso-bg: radial-gradient(circle at 20% 30%, rgba(0, 58, 107, 1) 0%, rgba(0, 45, 82, 1) 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--primary-navy);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  height: auto !important;
+  min-height: 100vh;
+}
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-cinzel tracking-wider uppercase;
+  }
+
+  body {
+    @apply font-montserrat;
+  }
+}
+
+.bg-celeste-hermoso {
+  background: var(--celeste-hermoso-bg);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #A67C00 0%, #C49B26 45%, #FFD700 50%, #C49B26 55%, #A67C00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.button-gold-metallic {
+  background: linear-gradient(135deg, #A67C00 0%, #C49B26 45%, #FFD700 50%, #C49B26 55%, #A67C00 100%);
+  @apply relative overflow-hidden transition-all duration-500 border border-white/20;
+}
+
+.button-gold-metallic::after {
+  content: '';
+  @apply absolute top-0 -left-full w-full h-full;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: 0.6s;
+}
+
+.button-gold-metallic:hover::after {
+  @apply left-full;
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 10px rgba(166, 124, 0, 0.3), 0 0 20px rgba(166, 124, 0, 0.1);
+}
+
+.shadow-gold-premium {
+  box-shadow: 0 25px 50px -12px rgba(166, 124, 0, 0.2);
+}
+
+/* Star animations */
+@keyframes star-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  100% {
+    transform: translateX(-1000px) translateY(1000px) rotate(-45deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-star {
+  animation: star-pulse 3s infinite ease-in-out;
+}
+
+.shooting-star {
+  @apply absolute bg-white h-[2px] w-[100px] opacity-0;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shooting-star 4s linear infinite;
+}

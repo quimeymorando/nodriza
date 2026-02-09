@@ -1,0 +1,89 @@
+import { motion } from 'framer-motion'
+import { SpaceBackground } from './SpaceBackground'
+
+const agenda = [
+    { day: "LUNES", title: "CUERPO + ESPÍRITU", content: ["HumanFlow: Enraizar energía y mover tensión.", "Sesión Troncal: Dirección interna y foco espiritual."] },
+    { day: "MARTES", title: "MENTE & VENTAS", content: ["Abundancia: Unir espiritualidad y acción comercial.", "Visión a Acción: Reprogramación y nuevos hábitos."] },
+    { day: "MIÉRCOLES", title: "REDES SOCIALES", content: ["Estrategia de Contenido.", "Guionado, grabado y expansión del mensaje."] },
+    { day: "JUEVES", title: "MARCA PERSONAL", content: ["Bio, historia y coherencia estética.", "Construir presencia auténtica."] },
+    { day: "VIERNES", title: "TECH & IMPLEMENTACIÓN", content: ["IA, Funnels, Web Sprint y Automatizaciones."] },
+]
+
+export const Agenda = () => {
+    return (
+        <section className="py-32 relative overflow-hidden bg-primary-navy">
+            {/* Fondo Galáctico */}
+            <SpaceBackground />
+
+            <div className="container mx-auto px-4 max-w-7xl relative z-10">
+                <div className="text-center mb-24">
+                    <span className="inline-block border border-[#A67C00] px-4 py-1 text-[#A67C00] text-xs tracking-[0.3em] mb-6 uppercase font-bold bg-[#A67C00]/10 backdrop-blur-sm">
+                        Estructura Semanal
+                    </span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-cinzel text-white leading-tight">
+                        Tu Semana en <span className="text-gold-gradient">NODRIZA</span>
+                    </h2>
+                    <p className="mt-8 text-white/60 max-w-2xl mx-auto font-montserrat leading-relaxed text-lg">
+                        Una estructura viva diseñada para mantener tu vibración alta y tu negocio en movimiento constante.
+                    </p>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-8">
+                    {agenda.map((item, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial="rest"
+                            whileInView="visible"
+                            whileHover="hover"
+                            viewport={{ once: true }}
+                            variants={{
+                                visible: { opacity: 1, scale: 1, transition: { delay: idx * 0.1 } },
+                                rest: { opacity: 0, scale: 0.95 },
+                                hover: {
+                                    scale: 1.02,
+                                    y: -8,
+                                    transition: { duration: 0.4, ease: "easeOut" }
+                                }
+                            }}
+                            className="flex-1 min-w-[300px] p-10 border border-white/10 bg-white/5 backdrop-blur-md group relative overflow-hidden transition-colors duration-500 hover:bg-white/10 hover:border-[#A67C00]/50"
+                        >
+                            {/* Decorative background number */}
+                            <span className="absolute -right-4 -bottom-4 text-9xl font-cinzel text-white/5 group-hover:text-[#A67C00]/10 transition-colors duration-500 pointer-events-none select-none">
+                                {idx + 1}
+                            </span>
+
+                            <h3 className="text-[#A67C00] font-cinzel text-sm tracking-widest border-b border-[#A67C00]/20 pb-4 mb-8 font-bold group-hover:tracking-[0.2em] transition-all duration-500">
+                                {item.day}
+                            </h3>
+                            <h4 className="text-xl font-cinzel mb-6 tracking-wider text-white group-hover:text-primary-gold transition-colors">{item.title}</h4>
+
+                            <motion.ul
+                                className="space-y-4 text-sm text-white/60 font-montserrat relative z-10"
+                                variants={{
+                                    hover: { transition: { staggerChildren: 0.1 } }
+                                }}
+                            >
+                                {item.content.map((point, i) => (
+                                    <motion.li
+                                        key={i}
+                                        variants={{
+                                            rest: { x: 0, opacity: 0.8 },
+                                            hover: { x: 6, opacity: 1 }
+                                        }}
+                                        className="flex gap-3 items-start group-hover:text-white transition-colors"
+                                    >
+                                        <span className="text-[#A67C00] font-bold mt-0.5">›</span>
+                                        {point}
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
+
+                            {/* Glow effect on hover */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A67C00]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl" />
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}

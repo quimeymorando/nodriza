@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/nodriza/assets/(.*)",
+            "destination": "/assets/$1"
+        },
+        {
+            "source": "/nodriza/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
