@@ -52,7 +52,7 @@ export const Stack = () => {
                             transition={{ delay: idx * 0.1 }}
                             className={`p-6 md:p-8 rounded-sm border transition-all duration-300 relative group overflow-hidden ${item.highlight
                                 ? 'bg-[#001A33] border-[#A67C00] text-white shadow-2xl scale-105 md:col-span-2'
-                                : 'bg-[#FDFCFB] border-slate-100 text-slate-800 hover:shadow-xl'
+                                : 'bg-[#FDFCFB] border-[#A67C00] text-slate-800 hover:shadow-xl'
                                 }`}
                         >
                             {item.highlight && (

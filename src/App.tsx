@@ -9,6 +9,7 @@ import { Stack } from './components/Stack'
 import { FAQ } from './components/FAQ'
 import { AssistantSection } from './components/AssistantSection'
 import { ChatWidget } from './components/ChatWidget'
+import { Footer } from './components/Footer'
 
 function App() {
   const [view, setView] = useState<'landing' | 'booking' | 'preparation'>('landing')
@@ -80,6 +81,7 @@ function App() {
             </button>
           </div>
         </section>
+        <Footer />
       </div>
     )
   }

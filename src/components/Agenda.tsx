@@ -45,7 +45,7 @@ export const Agenda = () => {
                                     transition: { duration: 0.4, ease: "easeOut" }
                                 }
                             }}
-                            className="flex-1 min-w-[300px] p-10 border border-white/10 bg-white/5 backdrop-blur-md group relative overflow-hidden transition-colors duration-500 hover:bg-white/10 hover:border-[#A67C00]/50"
+                            className="flex-1 min-w-[300px] p-10 border border-white/10 bg-white/5 backdrop-blur-md group relative overflow-hidden transition-all duration-500 hover:bg-white/10 hover:border-[#A67C00] hover:shadow-[0_0_30px_rgba(166,124,0,0.15)]"
                         >
                             {/* Decorative background number */}
                             <span className="absolute -right-4 -bottom-4 text-9xl font-cinzel text-white/5 group-hover:text-[#A67C00]/10 transition-colors duration-500 pointer-events-none select-none">
@@ -57,26 +57,17 @@ export const Agenda = () => {
                             </h3>
                             <h4 className="text-xl font-cinzel mb-6 tracking-wider text-white group-hover:text-primary-gold transition-colors">{item.title}</h4>
 
-                            <motion.ul
-                                className="space-y-4 text-sm text-white/60 font-montserrat relative z-10"
-                                variants={{
-                                    hover: { transition: { staggerChildren: 0.1 } }
-                                }}
-                            >
+                            <ul className="space-y-4 text-sm text-white/90 font-montserrat relative z-10">
                                 {item.content.map((point, i) => (
-                                    <motion.li
+                                    <li
                                         key={i}
-                                        variants={{
-                                            rest: { x: 0, opacity: 0.8 },
-                                            hover: { x: 6, opacity: 1 }
-                                        }}
-                                        className="flex gap-3 items-start group-hover:text-white transition-colors"
+                                        className="flex gap-3 items-start"
                                     >
                                         <span className="text-[#A67C00] font-bold mt-0.5">›</span>
                                         {point}
-                                    </motion.li>
+                                    </li>
                                 ))}
-                            </motion.ul>
+                            </ul>
 
                             {/* Glow effect on hover */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#A67C00]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl" />
