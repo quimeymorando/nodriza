@@ -31,20 +31,11 @@ export const Hero = ({ onApply }: HeroProps) => {
                     Construye tu <span className="text-gold-gradient drop-shadow-sm px-2">SOSTÉN</span>
                 </motion.h1>
 
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-lg md:text-xl font-montserrat text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed border-l-2 border-[#A67C00] pl-8"
-                >
-                    NODRIZA 2026: Una escuela viva para vivir de forma coherente, abundante y en paz con tu camino.
-                </motion.p>
-
                 {/* VSL Container (WebApp Style) */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 }}
+                    transition={{ delay: 0.4 }}
                     className="w-full max-w-4xl mx-auto aspect-video bg-black/80 rounded-sm border border-white/20 shadow-2xl overflow-hidden mb-12 group transition-all duration-700 hover:border-[#A67C00]/50"
                 >
                     <iframe
@@ -56,11 +47,21 @@ export const Hero = ({ onApply }: HeroProps) => {
                     ></iframe>
                 </motion.div>
 
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="text-lg md:text-xl font-montserrat text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed border-l-2 border-[#A67C00] pl-8"
+                >
+                    NODRIZA no es un programa abierto. <br className="hidden md:block" />
+                    El ingreso es por proceso de admisión. Queremos estar seguros de que podemos ayudarte.
+                </motion.p>
+
                 <button
                     onClick={onApply}
                     className="button-gold-metallic px-8 py-4 md:px-10 md:py-5 text-white font-bold rounded-full shadow-gold hover:scale-105 transition-all duration-300 font-cinzel text-lg md:text-xl tracking-widest"
                 >
-                    RESERVAR MI LLAMADA DE CLARIDAD
+                    AGENDAR ES ELEGIRTE
                 </button>
             </div>
         </section>

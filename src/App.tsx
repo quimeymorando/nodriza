@@ -76,7 +76,7 @@ function App() {
               onClick={toggleView}
               className="button-gold-metallic px-12 py-6 text-white font-bold rounded-full font-cinzel text-xl tracking-[0.2em] shadow-gold hover:scale-105 transition-all duration-300"
             >
-              SÍ, QUIERO APLICAR AHORA
+              ASUMO MI LUGAR - APLICAR AHORA
             </button>
           </div>
         </section>

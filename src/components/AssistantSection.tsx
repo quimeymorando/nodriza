@@ -30,11 +30,11 @@ export const AssistantSection = ({ onOpenChat }: AssistantSectionProps) => {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-cinzel text-white mb-4">
-                        ¿Aún tienes dudas sobre tu <span className="text-gold-gradient">Expansión</span>?
+                        ¿Dudas antes de <span className="text-gold-gradient">Asumir</span>?
                     </h2>
 
                     <p className="text-white/70 font-montserrat text-lg mb-8 max-w-2xl mx-auto">
-                        No dejes que la incertidumbre te paralice. He entrenado a una <strong>Inteligencia Artificial</strong> con mis mejores estrategias y respuestas para desbloquearte ahora mismo.
+                        Si estás listo para entrar pero tienes una pregunta específica, usa mi IA entrenada.
                     </p>
 
                     <button
@@ -46,7 +46,7 @@ export const AssistantSection = ({ onOpenChat }: AssistantSectionProps) => {
                     </button>
 
                     <p className="mt-6 text-xs text-white/30 font-montserrat">
-                        *Disponible 24/7 para aspirantes comprometidos.
+                        *Solo para aspirantes comprometidos.
                     </p>
                 </motion.div>
             </div>

@@ -78,34 +78,34 @@ export const Pillars = () => {
                             viewport={{ once: true }}
                             transition={{ delay: pillar.delay, duration: 0.6 }}
                             whileHover={{
-                                y: -15,
-                                rotateX: 2,
-                                rotateY: -2,
+                                y: -20,
                                 transition: { duration: 0.3 }
                             }}
-                            className="p-12 bg-[#FDFCFB] border border-slate-100 rounded-sm group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(166,124,0,0.15)] relative overflow-hidden flex flex-col items-center text-center"
+                            className="p-12 bg-white border border-[#A67C00] rounded-xl group transition-all duration-500 shadow-[0_10px_30px_-15px_rgba(166,124,0,0.15)] hover:shadow-[0_30px_60px_-10px_rgba(166,124,0,0.4)] hover:ring-1 hover:ring-[#A67C00] relative overflow-hidden flex flex-col items-center text-center"
                         >
                             {/* Card Sheen Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#A67C00]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+
+                            {/* Background Glow on Hover */}
+                            <div className="absolute inset-0 bg-[#A67C00]/0 group-hover:bg-[#A67C00]/[0.02] transition-colors duration-500" />
 
                             {/* Decorative background glyph */}
-                            <span className="absolute -right-6 -top-6 text-[120px] font-cinzel text-slate-50 group-hover:text-[#A67C00]/5 transition-colors duration-700 pointer-events-none opacity-50 select-none">
+                            <span className="absolute -right-6 -top-6 text-[120px] font-cinzel text-slate-100 group-hover:text-[#A67C00]/10 transition-colors duration-700 pointer-events-none select-none">
                                 {pillar.title.charAt(0)}
                             </span>
 
                             <motion.div
-                                whileHover={{ scale: 1.1, rotate: 10 }}
-                                className="mb-8 p-5 bg-white rounded-full shadow-lg border border-slate-50 text-[#A67C00] group-hover:text-primary-gold-light group-hover:shadow-[#A67C00]/20 transition-all duration-500"
+                                className="mb-8 p-5 bg-white rounded-full shadow-lg border border-slate-100 text-[#A67C00] group-hover:bg-[#A67C00] group-hover:text-white group-hover:border-[#A67C00] group-hover:shadow-[0_0_30px_rgba(166,124,0,0.5)] transition-all duration-500 z-10"
                             >
                                 {pillar.icon}
                             </motion.div>
 
-                            <h3 className="text-2xl font-cinzel mb-3 tracking-widest text-slate-900 group-hover:text-primary-gold transition-colors duration-300">
+                            <h3 className="text-2xl font-cinzel mb-3 tracking-widest text-slate-900 group-hover:text-[#A67C00] transition-colors duration-300 z-10 font-bold">
                                 {pillar.title}
                             </h3>
-                            <p className="text-[#A67C00] font-bold mb-8 text-xs uppercase tracking-[0.2em]">{pillar.subtitle}</p>
+                            <p className="text-[#A67C00] font-bold mb-8 text-xs uppercase tracking-[0.2em] group-hover:text-slate-600 transition-colors z-10">{pillar.subtitle}</p>
 
-                            <ul className="space-y-4 text-slate-600 text-sm font-montserrat w-full">
+                            <ul className="space-y-4 text-slate-600 text-sm font-montserrat w-full z-10">
                                 {pillar.items.map((item, i) => (
                                     <motion.li
                                         key={i}
@@ -114,14 +114,14 @@ export const Pillars = () => {
                                         transition={{ delay: 0.4 + (i * 0.1) }}
                                         className="flex items-center gap-3 justify-start"
                                     >
-                                        <span className="w-1.5 h-1.5 bg-[#A67C00] rounded-full flex-shrink-0 group-hover:scale-125 transition-transform" />
-                                        <span className="group-hover:text-slate-900 transition-colors uppercase text-[10px] tracking-wider text-left">{item}</span>
+                                        <span className="w-1.5 h-1.5 bg-[#A67C00] rounded-full flex-shrink-0 group-hover:scale-150 group-hover:shadow-[0_0_10px_#A67C00] transition-all" />
+                                        <span className="group-hover:text-slate-900 transition-colors uppercase text-[10px] tracking-wider text-left font-medium">{item}</span>
                                     </motion.li>
                                 ))}
                             </ul>
 
                             {/* Decorative bottom line */}
-                            <div className="absolute bottom-0 left-0 w-0 h-1 bg-gold-metallic group-hover:w-full transition-all duration-700" />
+                            <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-gold-metallic group-hover:w-full transition-all duration-700 ease-in-out" />
                         </motion.div>
                     ))}
                 </div>
