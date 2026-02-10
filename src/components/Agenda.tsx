@@ -1,12 +1,47 @@
 import { motion } from 'framer-motion'
 import { SpaceBackground } from './SpaceBackground'
+import { Brain, Share2, Fingerprint, Cpu, Mountain, User, StretchHorizontal } from 'lucide-react'
+
+// Removed unused YogaIcon
+
 
 const agenda = [
-    { day: "LUNES", title: "CUERPO + ESPÍRITU", content: ["HumanFlow: Enraizar energía y mover tensión.", "Sesión Troncal: Dirección interna y foco espiritual."] },
-    { day: "MARTES", title: "MENTE & VENTAS", content: ["Abundancia: Unir espiritualidad y acción comercial.", "Visión a Acción: Reprogramación y nuevos hábitos."] },
-    { day: "MIÉRCOLES", title: "REDES SOCIALES", content: ["Estrategia de Contenido.", "Guionado, grabado y expansión del mensaje."] },
-    { day: "JUEVES", title: "MARCA PERSONAL", content: ["Bio, historia y coherencia estética.", "Construir presencia auténtica."] },
-    { day: "VIERNES", title: "TECH & IMPLEMENTACIÓN", content: ["IA, Funnels, Web Sprint y Automatizaciones."] },
+    {
+        day: "LUNES",
+        title: "CUERPO + ESPÍRITU",
+        icon: <User className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["HumanFlow: Enraizar energía y mover tensión.", "Sesión Troncal: Dirección interna y foco espiritual."]
+    },
+    {
+        day: "MARTES",
+        title: "MENTE & VENTAS",
+        icon: <Brain className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["Abundancia: Unir espiritualidad y acción comercial.", "Visión a Acción: Reprogramación y nuevos hábitos."]
+    },
+    {
+        day: "MIÉRCOLES",
+        title: "REDES SOCIALES",
+        icon: <Share2 className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["Estrategia de Contenido.", "Guionado, grabado y expansión del mensaje."]
+    },
+    {
+        day: "JUEVES",
+        title: "MARCA PERSONAL",
+        icon: <Fingerprint className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["Bio, historia y coherencia estética.", "Construir presencia auténtica."]
+    },
+    {
+        day: "VIERNES",
+        title: "TECH & IMPLEMENTACIÓN",
+        icon: <Cpu className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["IA, Funnels, Web Sprint y Automatizaciones."]
+    },
+    {
+        day: "MARATONES",
+        title: "FINES DE SEMANA",
+        icon: <Mountain className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" strokeWidth={1.5} />,
+        content: ["1 vez por mes nos encontramos en una Jornada inmersiva completa de 1 o 2 dias para destrabar creencias y potenciar tu salto."]
+    }
 ]
 
 export const Agenda = () => {
@@ -51,6 +86,11 @@ export const Agenda = () => {
                             <span className="absolute -right-4 -bottom-4 text-9xl font-cinzel text-white/5 group-hover:text-[#A67C00]/10 transition-colors duration-500 pointer-events-none select-none">
                                 {idx + 1}
                             </span>
+
+                            {/* Top Right Icon */}
+                            <div className="absolute top-6 right-6 opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                                {item.icon}
+                            </div>
 
                             <h3 className="text-[#A67C00] font-cinzel text-sm tracking-widest border-b border-[#A67C00]/20 pb-4 mb-8 font-bold group-hover:tracking-[0.2em] transition-all duration-500">
                                 {item.day}

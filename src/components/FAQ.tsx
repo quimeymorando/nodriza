@@ -5,11 +5,11 @@ import { ChevronDown, HelpCircle } from 'lucide-react'
 const faqs = [
     {
         question: "¿Es para mí si estoy empezando de cero?",
-        answer: "Absolutamente. Nodriza está diseñado para construir las bases desde la raíz. Si no tienes una oferta clara, la diseñaremos juntos. Si no tienes estructura, te la daremos. Es mejor empezar con ingeniería sólida que reconstruir sobre escombros después."
+        answer: "Absolutamente. Nodriza está diseñado para construir las bases desde la raíz. Si no tienes una oferta clara, la diseñaremos juntos. Si no tienes estructura, te la daremos. Es mejor empezar con ingeniería sólida que reconstruir sobre escombros después. Si ya tienes un camino recorrido, revisaremos juntos las bases que lo estructuran para ajustar lo necesario a fin de sostener el crecimiento con solidez."
     },
     {
         question: "¿Cuánto tiempo necesito invertir semanalmente?",
-        answer: "No buscamos que trabajes más, sino mejor. El programa requiere unas 4-5 horas semanales de foco profundo (Deep Work). No te daremos 'relleno', solo acciones de alta palanca para mover la aguja de tu negocio."
+        answer: "No buscamos que trabajes más, sino mejor. El programa requiere al menos de unas 6-8 horas semanales de foco profundo (Deep Work). No te daremos 'relleno', solo acciones de alto impacto para mover la aguja de tu emprendimiento y marca personal."
     },
     {
         question: "¿Qué pasa si no puedo asistir a las sesiones en vivo?",
@@ -17,7 +17,7 @@ const faqs = [
     },
     {
         question: "¿En qué se diferencia de otros programas de 'High Ticket'?",
-        answer: "La mayoría te enseña solo 'Ventas' o solo 'Marketing'. Nodriza integra el SER (mentalidad y energía) con el SOSTÉN (estrategia pura). Sin coherencia interna, ninguna estrategia de ventas se sostiene en el tiempo. Nosotros trabajamos ambas."
+        answer: "Nodriza aporta al PROPÓSITO PRINCIPAL de esta vida, que es SER. Todo lo que hacemos es definitiva para conocer quienes SOMOS. Tu proyecto no escapa a esto. La mayoría de los cursas te enseña fragmentado: solo 'Ventas', solo 'Espiritualidad' o solo 'Marketing'. Nodriza integra el SER (mentalidad, consciencia y energía) con el SOSTÉN (estrategia, comunidad y materia). Sin coherencia interna, ninguna estrategia de expansión se sostiene en el tiempo. Nosotros trabajamos ambas y más aún. Preparate para soltar los viejos personajes, desidentificarte con tus creencias más limitantes y ACTIVAR tu verdadero POTENCIAL. Y no es un cuento para convencerte, aquí no venimos a eso, estamos para ENCENDERTE."
     }
 ]
 

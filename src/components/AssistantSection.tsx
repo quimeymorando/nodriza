@@ -32,7 +32,7 @@ export const AssistantSection = ({ onOpenChat }: AssistantSectionProps) => {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-cinzel text-white mb-4 relative z-20">
-                        ¿DUDAS ANTES DE <span className="text-gold-gradient">ASUMIR</span>?
+                        ¿MÁS <span className="text-gold-gradient">DUDAS</span>?
                     </h2>
 
                     <p className="text-white/70 font-montserrat text-lg mb-8 max-w-2xl mx-auto relative z-20">

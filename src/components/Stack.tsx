@@ -5,7 +5,7 @@ const stackItems = [
     {
         title: "Mentoria Semanal en Vivo",
         icon: <Video className="w-6 h-6" />,
-        desc: "4 Encuentros directos conmigo de 90 minutos. Pura estrategia, desbloqueo y dirección. Sin filtros.",
+        desc: "Encuentros directos de 90 minutos conmigo y con Maestros Dorados especialistas en Redes, Marca Personal, Liderazgo, Coaching, PNL, Yoga y mucho más . Pura estrategia, desbloqueo y dirección. Sin filtros.",
         highlight: true
     },
     {
@@ -82,22 +82,14 @@ export const Stack = () => {
                 </div>
 
                 {/* Call to Action sin precio explicito */}
+                {/* Call to Action sin precio explicito
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     className="max-w-2xl mx-auto text-center"
                 >
-                    <p className="font-cinzel text-3xl md:text-5xl text-[#A67C00] mb-8 font-bold">
-                        Precio: Invaluable
-                    </p>
-
-                    <button className="button-gold-metallic px-10 py-5 text-white font-bold rounded-full font-cinzel tracking-widest shadow-gold text-lg w-full md:w-auto hover:scale-105 transition-transform">
-                        APLICAR AHORA
-                    </button>
-                    <p className="mt-4 text-xs text-slate-400 font-montserrat">
-                        *Solo aceptamos 10 personas por generación.
-                    </p>
-                </motion.div>
+                   
+                </motion.div> */}
 
             </div>
         </section>

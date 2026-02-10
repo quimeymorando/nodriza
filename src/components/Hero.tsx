@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero = ({ onApply }: HeroProps) => {
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20">
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 pb-16">
             {/* Fondo Galáctico Unificado */}
             <SpaceBackground />
 
@@ -15,7 +15,7 @@ export const Hero = ({ onApply }: HeroProps) => {
                 <motion.span
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="inline-block border border-white/40 px-6 py-2 text-white text-xs tracking-[0.3em] mb-8 uppercase"
+                    className="inline-block border border-white/40 px-6 py-2 text-white text-xs tracking-[0.3em] mb-6 uppercase"
                 >
                     Escuela de Propósito, Espiritualidad y Abundancia
                 </motion.span>
@@ -24,7 +24,7 @@ export const Hero = ({ onApply }: HeroProps) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-cinzel text-white mb-8 leading-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]"
+                    className="text-4xl md:text-6xl lg:text-7xl font-cinzel text-white mb-6 leading-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]"
                 >
                     Estabiliza tu <span className="text-gold-gradient drop-shadow-sm px-2">SER</span>, <br className="hidden md:block" />
                     Ordena tu <span className="text-gold-gradient drop-shadow-sm px-2">SERVICIO</span> y <br className="hidden md:block" />
@@ -36,7 +36,7 @@ export const Hero = ({ onApply }: HeroProps) => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="w-full max-w-4xl mx-auto aspect-video bg-black/80 rounded-sm border border-white/20 shadow-2xl overflow-hidden mb-12 group transition-all duration-700 hover:border-[#A67C00]/50"
+                    className="w-full max-w-4xl mx-auto aspect-video bg-black/80 rounded-sm border border-white/20 shadow-2xl overflow-hidden mb-10 group transition-all duration-700 hover:border-[#A67C00]/50"
                 >
                     <iframe
                         className="w-full h-full"
@@ -47,14 +47,23 @@ export const Hero = ({ onApply }: HeroProps) => {
                     ></iframe>
                 </motion.div>
 
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.55 }}
+                    className="text-2xl md:text-3xl font-cinzel text-gold-gradient mb-6 font-bold"
+                >
+                    NODRIZA ES ASUNCIÓN
+                </motion.h2>
+
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                     className="text-lg md:text-xl font-montserrat text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed border-l-2 border-[#A67C00] pl-8"
                 >
-                    NODRIZA no es un programa abierto. <br className="hidden md:block" />
-                    El ingreso es por proceso de admisión. Queremos estar seguros de que podemos ayudarte.
+                    NODRIZA no es un programa para tibios. <br className="hidden md:block" />
+                    Es sólo para los que están listos para tomar ACCIÓN y crear una vida gloriosa!
                 </motion.p>
 
                 <button

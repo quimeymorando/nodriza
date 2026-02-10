@@ -54,7 +54,7 @@ export const Story = () => {
                             className="aspect-[3/4] rounded-sm overflow-hidden border border-white/20 shadow-2xl relative z-20 group"
                         >
                             <img
-                                src="https://caqodbqrdirvavlyldyp.supabase.co/storage/v1/object/public/recursos%20joaco/joaquin_alterman_style_vibe_1768237564971.png"
+                                src="https://storage.googleapis.com/msgsndr/uuaiNCJCRvymWQ2ejuex/media/698b6cc38682155edc61e55e.png"
                                 alt="Joaquín Alterman"
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                             />
