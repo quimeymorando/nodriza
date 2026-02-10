@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { SpaceBackground } from './SpaceBackground'
-import { Brain, Share2, Fingerprint, Cpu, Mountain, User, StretchHorizontal } from 'lucide-react'
+import { Brain, Share2, Fingerprint, Cpu, Mountain, User } from 'lucide-react'
 
 // Removed unused YogaIcon
 
