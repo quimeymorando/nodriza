@@ -23,6 +23,15 @@ function App() {
     }
   }, [])
 
+  // Hook para Meta Pixel SPA Tracking
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'fbq' in window) {
+      // Registrar la vista de página con el pixel cada vez que cambie la vista principal
+      // @ts-ignore
+      window.fbq('track', 'PageView');
+    }
+  }, [view]);
+
   const toggleView = () => {
     setView(view === 'landing' ? 'booking' : 'landing')
     window.scrollTo({ top: 0, behavior: 'smooth' })
