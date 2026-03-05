@@ -10,9 +10,10 @@ import { FAQ } from './components/FAQ'
 import { AssistantSection } from './components/AssistantSection'
 import { ChatWidget } from './components/ChatWidget'
 import { Footer } from './components/Footer'
+import { FormularioNodriza } from './components/FormularioNodriza'
 
 function App() {
-  const [view, setView] = useState<'landing' | 'booking' | 'preparation'>('landing')
+  const [view, setView] = useState<'landing' | 'booking' | 'preparation' | 'formulario'>('landing')
   const [isChatOpen, setIsChatOpen] = useState(false)
 
   useEffect(() => {
@@ -20,6 +21,8 @@ function App() {
     const params = new URLSearchParams(window.location.search)
     if (params.get('view') === 'confirmation' || window.location.pathname.includes('nodriza-preparacion')) {
       setView('preparation')
+    } else if (window.location.pathname.includes('/formulario')) {
+      setView('formulario')
     }
   }, [])
 
@@ -39,6 +42,7 @@ function App() {
 
   // Renderizador de Vistas
   const renderView = () => {
+    if (view === 'formulario') return <FormularioNodriza />
     if (view === 'preparation') return <Preparation />
 
     if (view === 'booking') return (
@@ -98,15 +102,17 @@ function App() {
   return (
     <main className="w-full min-h-screen bg-primary-navy relative">
       {renderView()}
-      <ChatWidget
-        isOpen={isChatOpen}
-        setIsOpen={setIsChatOpen}
-        onBooking={() => {
-          setIsChatOpen(false)
-          setView('booking')
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-        }}
-      />
+      {view !== 'formulario' && (
+        <ChatWidget
+          isOpen={isChatOpen}
+          setIsOpen={setIsChatOpen}
+          onBooking={() => {
+            setIsChatOpen(false)
+            setView('booking')
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+        />
+      )}
     </main>
   )
 }
