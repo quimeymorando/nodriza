@@ -146,7 +146,7 @@ export const Preparation = () => {
                         href="https://calendar.google.com/"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-3 bg-white text-primary-navy px-8 py-4 rounded-sm font-bold font-cinzel tracking-wider hover:bg-[#FFD700] transition-colors duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                        className="inline-flex items-center gap-3 bg-white text-primary-navy px-8 py-4 rounded-sm font-bold font-cinzel tracking-wider hover:bg-[#FFD700] transition-colors duration-300"
                     >
                         <CalendarCheck className="w-5 h-5" />
                         IR A MI CALENDARIO
