@@ -157,45 +157,49 @@ export const Preparation = () => {
                 <div className="mb-16">
                     <span className="text-[#A67C00] font-cinzel text-sm tracking-[0.4em] mb-8 block uppercase font-bold">PASO #4: INSPÍRATE</span>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
-                            <iframe
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden relative group">
+                            <video
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/E2llff-52OA"
-                                title="Testimonio 1"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                                src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/69ac38a7618c8d3c3f506ce2.mp4"
+                                controls
+                                className="w-full h-full object-cover"
+                            >
+                                Tu navegador no soporta el tag de video.
+                            </video>
                         </div>
-                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
-                            <iframe
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden relative group">
+                            <video
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/qPiLfBx2vf4"
-                                title="Testimonio 2"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                                src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/69ac38a7b2a2743a1fe98f36.mp4"
+                                controls
+                                className="w-full h-full object-cover"
+                            >
+                                Tu navegador no soporta el tag de video.
+                            </video>
                         </div>
-                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
-                            <iframe
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden relative group">
+                            <video
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/KF6WkyP1_7M"
-                                title="Testimonio 3"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                                src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/69ac38a7b2a2745011e98f35.mp4"
+                                controls
+                                className="w-full h-full object-cover"
+                            >
+                                Tu navegador no soporta el tag de video.
+                            </video>
                         </div>
-                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
-                            <iframe
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden relative group">
+                            <video
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/j1j-K_m6P2o"
-                                title="Testimonio 4"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
+                                src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/69ac38a736702f64293f2f85.mp4"
+                                controls
+                                className="w-full h-full object-cover"
+                            >
+                                Tu navegador no soporta el tag de video.
+                            </video>
                         </div>
                     </div>
                 </div>
