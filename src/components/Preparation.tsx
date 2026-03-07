@@ -208,6 +208,6 @@ export const Preparation = () => {
                 </button>
 
             </div>
-        </section>
+        </section >
     )
 }
