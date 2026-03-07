@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     // Detectar si la URL indica éxito (redirección desde GHL o máscara desde el Hub)
     const params = new URLSearchParams(window.location.search)
-    if (params.get('view') === 'confirmation' || window.location.pathname.includes('nodriza-preparacion')) {
+    if (params.get('view') === 'confirmation' || window.location.pathname.includes('/confirmacion')) {
       setView('preparation')
     } else if (window.location.pathname.includes('/formulario')) {
       setView('formulario')

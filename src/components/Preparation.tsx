@@ -81,15 +81,15 @@ export const Preparation = () => {
                         viewport={{ once: true }}
                         className="w-full max-w-4xl mx-auto aspect-video bg-black/80 rounded-sm border border-white/20 shadow-2xl overflow-hidden group hover:border-[#A67C00]/50 transition-colors duration-500"
                     >
-                        <iframe
+                        <video
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/JzkVfsIDeGE"
-                            title="Briefing Nodriza"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="w-full h-full"
-                        />
+                            src="https://assets.cdn.filesafe.space/uuaiNCJCRvymWQ2ejuex/media/69a9c6cf5a330382f83a698e.mp4"
+                            controls
+                            className="w-full h-full object-cover"
+                        >
+                            Tu navegador no soporta el tag de video.
+                        </video>
                     </motion.div>
                 </div>
 
@@ -173,6 +173,26 @@ export const Preparation = () => {
                                 height="100%"
                                 src="https://www.youtube.com/embed/qPiLfBx2vf4"
                                 title="Testimonio 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/KF6WkyP1_7M"
+                                title="Testimonio 3"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        </div>
+                        <div className="aspect-video bg-black rounded-sm border border-white/20 shadow-xl overflow-hidden">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/j1j-K_m6P2o"
+                                title="Testimonio 4"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
